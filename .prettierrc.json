@@ -1,0 +1,4 @@
+{
+	"extends": "@oclif/prettier-config",
+	"semi": true
+}
