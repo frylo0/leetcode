@@ -49,6 +49,22 @@ class Heap {
 		console.log(output);
 	}
 
+	public extract(): null | number {
+		console.log(`== Extracting (${this.sign}) ==`);
+
+		if (this.heap.length === 0) return null;
+
+		const value = this.heap[0];
+
+		const lastItem = this.heap.pop();
+		if (lastItem === undefined && this.heap.length === 0) return value;
+
+		this.heap[0] = lastItem!;
+		this.heapifyDown(0);
+
+		return value;
+	}
+
 	public heapifyDown(startIndex: number) {
 		console.log(`Heapify down: ${startIndex}`);
 
@@ -83,7 +99,31 @@ class Heap {
 		}
 	}
 
-	public heapifyUp() {}
+	public heapifyUp(startIndex: number) {
+		console.log(`Heapify up: ${startIndex} (${this.sign})`);
+
+		let index = startIndex;
+
+		while (index !== null) {
+			const parentI = this.getParentIndex(index);
+			if (parentI === null) break;
+
+			const needSwap = this.pt(this.heap[index], this.heap[parentI]);
+
+			if (!needSwap) break;
+			this.swap(index, parentI);
+
+			index = parentI;
+
+			console.log(`Index: ${index}`);
+			this.draw();
+		}
+	}
+
+	public insert(item: number) {
+		const length = this.heap.push(item);
+		this.heapifyUp(length - 1);
+	}
 
 	private build() {
 		console.log(`== Building heap (${this.sign}) ==`);
@@ -101,6 +141,11 @@ class Heap {
 	private getChildIndexRight(index: number): null | number {
 		const childI = index * 2 + 2;
 		return childI >= this.heap.length ? null : childI;
+	}
+
+	private getParentIndex(index: number): null | number {
+		if (index === 0) return null;
+		return Math.trunc((index - 1) / 2);
 	}
 
 	private get lastParentIndex(): number {
@@ -150,5 +195,14 @@ export default class HeapCommand extends Command {
 		this.log(array.join(", "));
 		maxHeap.draw();
 		minHeap.draw();
+
+		maxHeap.insert(3);
+		minHeap.insert(3);
+
+		const maxHeapValue = maxHeap.extract();
+		console.log(`Max heap value: ${maxHeapValue}`);
+
+		const minHeapValue = minHeap.extract();
+		console.log(`Min heap value: ${minHeapValue}`);
 	}
 }
