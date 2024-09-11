@@ -187,7 +187,7 @@ export default class HeapCommand extends Command {
 	async run(): Promise<void> {
 		const array = genArray(14);
 
-		const maxHeap = new Heap(array, 'max');
+		const maxHeap = new Heap(array, "max");
 		const minHeap = new Heap(array, "min");
 
 		this.log("Heap");
