@@ -11,8 +11,10 @@ Project to practive leetcode tasks
 
 <!-- toc -->
 * [Usage](#usage)
+* [Development](#development)
 * [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
 <!-- usage -->
 ```sh-session
@@ -27,6 +29,12 @@ USAGE
 ...
 ```
 <!-- usagestop -->
+
+# Development
+```bash
+pnpm build && npx leetcode --help
+```
+
 # Commands
 <!-- commands -->
 * [`leetcode hello PERSON`](#leetcode-hello-person)
@@ -42,7 +50,11 @@ USAGE
 * [`leetcode plugins uninstall [PLUGIN]`](#leetcode-plugins-uninstall-plugin)
 * [`leetcode plugins unlink [PLUGIN]`](#leetcode-plugins-unlink-plugin)
 * [`leetcode plugins update`](#leetcode-plugins-update)
+* [`leetcode sort bubble`](#leetcode-sort-bubble)
+* [`leetcode sort insertion`](#leetcode-sort-insertion)
+* [`leetcode sort merge`](#leetcode-sort-merge)
 * [`leetcode sort quick`](#leetcode-sort-quick)
+* [`leetcode structures heap`](#leetcode-structures-heap)
 
 ## `leetcode hello PERSON`
 
@@ -395,6 +407,33 @@ DESCRIPTION
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/update.ts)_
 
+## `leetcode sort bubble`
+
+```
+USAGE
+  $ leetcode sort bubble
+```
+
+_See code: [src/commands/sort/bubble.ts](https://github.com/frylo0/leetcode/blob/v0.0.0/src/commands/sort/bubble.ts)_
+
+## `leetcode sort insertion`
+
+```
+USAGE
+  $ leetcode sort insertion
+```
+
+_See code: [src/commands/sort/insertion.ts](https://github.com/frylo0/leetcode/blob/v0.0.0/src/commands/sort/insertion.ts)_
+
+## `leetcode sort merge`
+
+```
+USAGE
+  $ leetcode sort merge
+```
+
+_See code: [src/commands/sort/merge.ts](https://github.com/frylo0/leetcode/blob/v0.0.0/src/commands/sort/merge.ts)_
+
 ## `leetcode sort quick`
 
 ```
@@ -403,4 +442,13 @@ USAGE
 ```
 
 _See code: [src/commands/sort/quick.ts](https://github.com/frylo0/leetcode/blob/v0.0.0/src/commands/sort/quick.ts)_
+
+## `leetcode structures heap`
+
+```
+USAGE
+  $ leetcode structures heap
+```
+
+_See code: [src/commands/structures/heap.ts](https://github.com/frylo0/leetcode/blob/v0.0.0/src/commands/structures/heap.ts)_
 <!-- commandsstop -->
