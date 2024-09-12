@@ -2,7 +2,7 @@ import { Command } from "@oclif/core";
 
 import { genArray } from "../../lib/array.js";
 
-class Heap {
+export class Heap {
 	private heap: number[] = [];
 	private sign: "<" | ">";
 

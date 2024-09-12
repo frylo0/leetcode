@@ -51,6 +51,7 @@ pnpm build && npx leetcode --help
 * [`leetcode plugins unlink [PLUGIN]`](#leetcode-plugins-unlink-plugin)
 * [`leetcode plugins update`](#leetcode-plugins-update)
 * [`leetcode sort bubble`](#leetcode-sort-bubble)
+* [`leetcode sort heap`](#leetcode-sort-heap)
 * [`leetcode sort insertion`](#leetcode-sort-insertion)
 * [`leetcode sort merge`](#leetcode-sort-merge)
 * [`leetcode sort quick`](#leetcode-sort-quick)
@@ -415,6 +416,15 @@ USAGE
 ```
 
 _See code: [src/commands/sort/bubble.ts](https://github.com/frylo0/leetcode/blob/v0.0.0/src/commands/sort/bubble.ts)_
+
+## `leetcode sort heap`
+
+```
+USAGE
+  $ leetcode sort heap
+```
+
+_See code: [src/commands/sort/heap.ts](https://github.com/frylo0/leetcode/blob/v0.0.0/src/commands/sort/heap.ts)_
 
 ## `leetcode sort insertion`
 
