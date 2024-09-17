@@ -60,6 +60,21 @@ class BST<T> {
 			}
 		}
 	}
+
+	search(value: T): BSTNode<T> | null {
+		console.log('BST search start: ' + value);
+
+		let current: BSTNode<T> | null = this.root;
+
+		while (current !== null) {
+			console.log(`BST search:`, { current: current.value, value });
+
+			if (current.value === value) return current;
+			current = value > current.value ? current.right : current.left;
+		}
+
+		return null;
+	}
 }
 
 export default class BSTCommand extends Command {
@@ -77,5 +92,7 @@ export default class BSTCommand extends Command {
 
 		this.log(array.join(", "));
 		bst.draw();
+
+		console.log({ search6: bst.search(6), searchNaN: bst.search(-1) });
 	}
 }
